@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row m-5">
+    <div class="col-6 offset-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter Tasks To Do" #textBox id="search-box">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="onAdd(textBox.value)">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+  <div class="row m-2" *ngFor="let listItem of listService.list$ | async">
+    <div class="col-6  offset-md-3">
+      <div class="input-group-text">
+        <input type="checkbox" #checkBox aria-label="Checkbox for following text input">
+        <div class="card-body">
+          {{ listItem.text }}
+          <button class="btn btn-outline-secondary" type="button" (click)="onDelete(listItem.id)">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+<div class="form-group row">
+    <div class="col-xs-4">
+      <input class="form-control" id="ex3" type="text">
+    </div>
+  </div>
+</div> -->
